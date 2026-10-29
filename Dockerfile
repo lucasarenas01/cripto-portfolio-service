@@ -8,6 +8,9 @@ ENV PYTHONUNBUFFERED=1
 # Directorio de trabajo interno
 WORKDIR /app
 
+# Etiqueta para que Watchtower lo actualice automáticamente
+LABEL com.centurylinklabs.watchtower.enable="true"
+
 # Instalar dependencias
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
